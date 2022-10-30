@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Navbar, Home, ProductPrev } from "./components";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+const App = () => {
+  const [productClicked, setProductClicked] = useState("");
+  const [productFullScreen, setProductFullScreen] = useState("");
+  const [isCartProduct, setIsCartProduct] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <nav className="navContainer">
+          <Navbar
+            isCartProduct={isCartProduct}
+            setIsCartProduct={setIsCartProduct}
+          />
+        </nav>
+        <div className="home-container">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home
+                  isCartProduct={isCartProduct}
+                  setIsCartProduct={setIsCartProduct}
+                />
+              }
+            />
+            <Route
+              path=":id"
+              element={
+                <ProductPrev
+                  productClicked={productClicked}
+                  productFullScreen={productFullScreen}
+                  setProductClicked={setProductClicked}
+                  setProductFullScreen={setProductFullScreen}
+                />
+              }
+            />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
