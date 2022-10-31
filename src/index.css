@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 :root {
@@ -339,6 +343,7 @@
   min-width: 300px;
   min-height: 228px;
   border-radius: 8px;
+  height: 100%;
   box-shadow: 2px 1px 19px 0px #5656568f;
 }
 
@@ -583,6 +588,22 @@
 
 .none {
   display: none;
+}
+
+.cartNumber {
+  width: 30px;
+    height: 22px;
+    border-radius: 14px;
+    display: flex;
+    color: var(--White);
+    font-size: 15px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Orange);
+    position: absolute;
+    top: -12px;
+    right: -12px;
 }
 
 @media (max-width: 850px) {

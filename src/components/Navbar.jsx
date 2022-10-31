@@ -20,7 +20,6 @@ const Navbar = ({isCartProduct, setIsCartProduct}) => {
     }
 
   }
-  console.log(isCartProduct.length == 0);
   
   return (
       <div className="nav-contents">
@@ -68,13 +67,20 @@ const Navbar = ({isCartProduct, setIsCartProduct}) => {
               </li>
             </ul>
         </div>
+
         <div className="nav-cartLog">
+          <div style={{position:'relative'}}>
+
           <img
             src={cart}
             alt=""
             className="cartIcon"
             onClick={() => setOpen(!open)}
-          />
+            />
+            {isCartProduct.length > 0 && 
+          <span className="cartNumber">{isCartProduct.length}</span>
+            }
+            </div>
           <img src={avatar} alt="" className="avatarIcon" />
           {open && (
             <div className="cart-container">
