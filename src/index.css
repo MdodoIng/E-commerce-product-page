@@ -325,12 +325,14 @@
 .add-to-cart>img {
   width: 14px;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .add-to-cart>p {
   font-size: 14px;
   color: var(--White);
   font-weight: 600;
+  cursor: pointer;
 }
 
 .cart-container {
@@ -344,7 +346,8 @@
   min-width: 300px;
   min-height: 228px;
   border-radius: 8px;
-  height: auto;
+  max-height: 50vh;
+  overflow: auto;
   box-shadow: 2px 1px 19px 0px #5656568f;
 }
 
@@ -707,7 +710,6 @@
   }
 
   .add-to-cart {
-    
     width: 100%;
     padding: 24px 50px;
     border-radius: 8px;

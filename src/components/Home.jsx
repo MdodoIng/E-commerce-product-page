@@ -54,18 +54,19 @@ const Home = ({ isCartProduct, setIsCartProduct }) => {
               <p>{cartItem}</p>
               <img src={plus} alt="" onClick={itemPlus} />
             </span>
-            <span className="add-to-cart">
+            <span className="add-to-cart" 
+            onClick={() =>
+              addCart(
+                products.id,
+                products.title,
+                products.discPrice,
+                cartItem,
+                products.images[0].jpgTub
+              )
+            }>
               <img src={cart} alt="" />
               <p
-                onClick={() =>
-                  addCart(
-                    products.id,
-                    products.title,
-                    products.discPrice,
-                    cartItem,
-                    products.images[0].jpgTub
-                  )
-                }
+                
               >
                 Add to cart
               </p>
