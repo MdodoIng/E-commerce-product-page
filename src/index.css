@@ -698,6 +698,7 @@
   }
 
   .add-to-cart {
+    cursor: pointer;
     width: 100%;
     padding: 24px 50px;
     border-radius: 8px;
