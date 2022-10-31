@@ -309,7 +309,7 @@
   width: 55%;
   background-color: var(--Orange);
   display: inline-flex;
-  height: 100%;
+  height: inherit;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
@@ -344,7 +344,7 @@
   min-width: 300px;
   min-height: 228px;
   border-radius: 8px;
-  height: 100%;
+  height: auto;
   box-shadow: 2px 1px 19px 0px #5656568f;
 }
 
@@ -437,6 +437,11 @@
   font-size: 16px;
   font-weight: 600;
   color: var(--DarkGrayishBlue);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 .status-lightBox {
@@ -607,6 +612,9 @@
     right: -12px;
 }
 
+.flex {
+  display: block;
+}
 @media (max-width: 850px) {
   .home-contents {
     flex-direction: column;
@@ -710,7 +718,7 @@
     width: 90%;
     left: 0;
     top: 100px;
-    height: 400px;
+    min-height: 400px;
     transform: translateX(5%);
 
   }
@@ -810,7 +818,10 @@
   }
 
   .none {
-    display: flex;
+    display: block;
   }
 
+  .flex {
+    display: none;
+  }
 }

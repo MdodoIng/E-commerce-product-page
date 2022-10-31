@@ -47,11 +47,12 @@ const ProductPrev = ({
             </>
           ) : (
             <>
-              <span onClick={""} className="lightBox-prev none" />
+              <span className="lightBox-prev none" />
               <span className="lightBox-next none" />
             </>
           )}
           <Carousel
+          className="flex"
             thumbWidth={110}
             onClickItem={handleClick}
             showStatus={false}
@@ -59,6 +60,20 @@ const ProductPrev = ({
             {product.map((i) => (
               <img
                 onClick={handleClick}
+                id={i.id}
+                src={i?.jpg}
+                alt=""
+                className="productBig"
+              />
+            ))}
+          </Carousel>
+          <Carousel
+          className="none"
+            thumbWidth={110}
+            showStatus={false}
+          >
+            {product.map((i) => (
+              <img
                 id={i.id}
                 src={i?.jpg}
                 alt=""
